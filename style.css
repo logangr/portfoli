@@ -6,5 +6,14 @@
 
 main {
     min-height: 100vh;
-    
+    background: linear-gradient(to right top, #f481ff, #6cdbeb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass {
+    background-color: #ffffffff;
+    width: 75%;
+    min-height: 80vh;
 }
