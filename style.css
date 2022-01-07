@@ -1,29 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 :root {
-    --main-color: #c152c5;
-    --bg-color: linear-gradient(to right top, #76e1f0, #dc51e9);
+  /*   --primary-color: #dc51e9;
+    --secondary-color: #76e1f0; */
+    --primary-color: #2ec442;
+    --secondary-color: #bfe044;
+    --main-text-color: #d4d4d4;
+    --bg-color: linear-gradient(to right top, var(--secondary-color), var(--primary-color));
     --text-color: hsl(0, 0%, 31%);
     --headings-color: hsl(0, 0%, 57%);
+    --border-radius: 10px;
 }
 
-
+* {
+    box-sizing: border-box;
+}
 
 body {
+    margin: 0;
     background: var(--bg-color);
     color: var(--text-color);
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 body > main {
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 80vh;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+
     display: grid;
+    gap: 1rem;
 }
 
-button {
-    background-color: var(--main-color);
+@media screen and (min-width: 720px){
+    body > main {
+        grid-template-columns: 320px 1fr;
+    }
 }
 
+.col {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.right-col {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 100px;
+    /* provar responsive sense media queries*/
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    /**********/
+}
+
+/* @media screen and (min-width: 720px){
+    .right-col {
+        grid-template-columns: ;
+    }
+} */
+
+.card {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    padding: 0 1.5rem;
+  }
+
+button.main-btn {
+    background-color: var(--primary-color);
+    color: var(--main-text-color);
+}
+
+.glass {
+    background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,0.4),
+        rgba(255,255,255,0.2)
+    );
+    box-shadow: 0 8px 32px 0 rgba(34, 34, 34, 0.233);
+    border: 1px solid rgba(255, 255, 255, 0.205);
+    backdrop-filter: blur(0.6rem);
+    -webkit-backdrop-filter: blur(0.6rem);
+}
+
+.profile-body, .profile-header {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.profile-body > a {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.circle-frame {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(34, 34, 34, 0.233);
+
+}
 
 /* background decoration */
 .circle1,.circle2 {
@@ -36,6 +138,16 @@ button {
     width: 15rem;
     position: absolute;
     border-radius: 50%;
+    z-index: -1;
+}
+
+.circle3,.circle4 {
+    background: linear-gradient(to left bottom, var(--secondary-color), var(--primary-color));
+    height: 18rem;
+    width: 18rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .circle1 {
@@ -46,6 +158,16 @@ button {
 .circle2 {
     bottom: 5%;
     left: 8%;
+}
+
+.circle3 {
+    top: 5%;
+    left: 8%;
+}
+
+.circle4 {
+    bottom: 5%;
+    right: 8%;
 }
 
 /* ************ */
